@@ -1,0 +1,25 @@
+{{!-- ./views/movies/new-movie.hbs --}}
+
+<h1>Crear película</h1>
+
+<form action="/movies/create" method="POST">
+
+	<label>Título</label>
+	<input name="title" type="text" />
+
+	<label>Género</label>
+	<input name="genre" type="text" />
+
+	<label>Guión</label>
+	<input name="plot" type="text" />
+
+	<label>Elenco</label>
+	<select name="cast" multiple>
+		{{#each celebrities}}
+			<option value={{_id}}>{{name}}</option>
+		{{/each}}
+	</select>	
+
+	<button type="submit">Crear nuevo</button>
+
+</form>

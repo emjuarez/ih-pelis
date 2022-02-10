@@ -1,0 +1,20 @@
+{{!-- ./views/movies/movies.hbs --}}
+<h1>Listado de películas</h1>
+
+{{#each movies}}
+
+	<h2>Película: {{title}}</h2>
+	<p>Género: {{genre}}</p>
+
+	<h3>Elenco</h3>
+	<ul>	
+		{{#each cast}}
+		<li>
+			<p>{{name}}</p>
+		</li>
+		{{/each}}
+	</ul>
+
+	<a href="/movies/{{_id}}">Ver detalles</a>
+	
+{{/each}}

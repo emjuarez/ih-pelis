@@ -1,0 +1,26 @@
+{{!-- ./views/movies/edit-movie.hbs --}}
+
+<h1>Editar película</h1>
+
+<form action="/movies/{{singleMovie._id}}/edit" method="POST">
+
+	<label>Título</label>
+	<input name="title" type="text" value="{{singleMovie.title}}" />
+
+	<label>Género</label>
+	<input name="genre" type="text" value="{{singleMovie.genre}}" />
+
+	<label>Guión</label>
+	<input name="plot" type="text" value="{{singleMovie.plot}}" />
+
+	<label>Elenco</label>
+	<select name="cast" multiple>
+
+		{{#each allCelebrities}}
+			<option selected value={{_id}}>{{name}}</option>
+		{{/each}}
+	</select>	
+
+	<button type="submit">Editar película</button>
+
+</form>
